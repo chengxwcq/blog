@@ -41,4 +41,14 @@
         <url-pattern>/get_article</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SubmitArticle</servlet-name>
+        <servlet-class>servlet.SubmitArticleServlet</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>SubmitArticle</servlet-name>
+        <url-pattern>/sumbit_article</url-pattern>
+    </servlet-mapping>
+
 </web-app>

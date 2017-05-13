@@ -7,26 +7,38 @@
 
 <head>
     <script type="text/javascript" src="showdown.min.js"></script>
+
+    <script type="text/javascript">
+        function compile(){
+            var text = document.getElementById("content").value;
+            var converter = new showdown.Converter();
+            var html = converter.makeHtml(text);
+            document.getElementById("result").innerHTML = html;
+        }
+    </script>
+
+    <style type="text/css">
+    p {
+        width: 75%;
+       /* background-image: url(image1.jpg);*/ 
+        padding: 1%;
+    }
+
+    .center {
+        margin-left:auto;
+        margin-right:auto;
+    }
+    </style>
 </head>
 
 <body onload="compile()">                   <!-- 在加载的时候就调用 compile() 函数 -->
     <%@ include file="header.jsp" %>
-</body>
-
+                                                 
 <div class="form-group">
-    <textarea id="content" class="form-control" rows="20"> ${content.content}</textarea>
+    <input id="content" name="content" type="hidden" value="${content.content}" > 
 </div>
-<p class="form-group" id = "result">
+<p class="center" id = "result">
 </p> 
 
-<script type="text/javascript">
-function compile(){
-    var text = document.getElementById("content").value;
-    var converter = new showdown.Converter();
-    var html = converter.makeHtml(text);
-    document.getElementById("result").innerHTML = html;
-}
-</script>
 </body>
-
 </html>

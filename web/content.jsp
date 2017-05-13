@@ -8,11 +8,20 @@
     <script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
     <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
     <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style type="text/css">
+    .center {
+        margin-left:auto;
+        margin-right:auto;
+        width:80%;
+    }
+    </style>
+
 </head>
 <body>
     <%@ include file="header.jsp" %>
 
-<div>
+<div class="center">
     <table class="table table-bordered table-condensed">
     <c:forEach items="${articles}" var="article" varStatus="st">
     <tr>
@@ -21,6 +30,16 @@
             <form action="get_article" method="get"> 
                 <button type="submit" class="btn btn-link" name = "id" value = ${article.id}> ${article.title} </button>
             </form>
+        </td>
+        <td align="center"> 
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </button> 
+        </td>
+        <td align="center"> 
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-trash"></span>
+            </button> 
         </td>
         <td align="center"> <font color = "#6699FF"> ${article.date} </td>
     </tr>
